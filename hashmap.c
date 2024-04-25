@@ -99,7 +99,7 @@ void eraseMap(HashMap * map,  char * key)
   Pair* par = searchMap(map, key);
   if(par != NULL)
   {
-    map->buckets[par->key] = NULL;
+    par->key = NULL;
   }
 }
 
