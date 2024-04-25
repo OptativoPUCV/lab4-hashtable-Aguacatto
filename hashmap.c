@@ -92,6 +92,7 @@ void enlarge(HashMap * map)
       
     }
   }
+  free(oldBuckets);
 }
 
 
