@@ -102,3 +102,13 @@ Thu 25 Apr 2024 03:03:53 AM UTC:
  tests:  8|3
 total_score: 40/70
 216d11c
+Thu 25 Apr 2024 03:08:47 AM UTC: 
+ hashmap.c | 10 +++++++---
+ 1 file changed, 7 insertions(+), 3 deletions(-)
+In file included from test.c:4:
+hashmap.c: In function ‘eraseMap’:
+hashmap.c:102:17: error: array subscript is not an integer
+  102 |     map->buckets[par->key] = NULL;
+      |                 ^
+Compilation failed
+551a619

@@ -94,9 +94,13 @@ HashMap * createMap(long capacity)
   ;
 }
 
-void eraseMap(HashMap * map,  char * key) {    
-
-
+void eraseMap(HashMap * map,  char * key)
+{
+  Pair* par = searchMap(map, key);
+  if(par != NULL)
+  {
+    map->buckets[par->key] = NULL;
+  }
 }
 
 Pair * searchMap(HashMap * map,  char * key)
