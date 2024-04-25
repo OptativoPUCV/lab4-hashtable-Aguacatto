@@ -45,7 +45,7 @@ void insertMap(HashMap * map, char * key, void * value)
   for(long i = 0; i < map->capacity; i++)
   {
     long currentIndex = (pos + i) % map->capacity;
-    if(map->buckets[currentIndex] != NULL && map->buckets[currentIndex]->key != NULL && is_equal(map->buckets[currentIndex]->key, key) == 1)
+    if(map->buckets[currentIndex] != NULL && is_equal(map->buckets[currentIndex]->key, key) == 1)
     {
       return;
     }
@@ -58,6 +58,7 @@ void insertMap(HashMap * map, char * key, void * value)
     newPair->value = value;
     map->buckets[pos] = newPair;
     map->current = pos;
+    map->size++;
   }
   else
   {
@@ -69,8 +70,8 @@ void insertMap(HashMap * map, char * key, void * value)
     map->buckets[newPos]->key = key;
     map->buckets[newPos]->value = value;
     map->current = newPos;
+    map->size++;
   }
-  map->size++;
 }
 
 void enlarge(HashMap * map) {
