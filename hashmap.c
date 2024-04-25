@@ -70,8 +70,8 @@ void insertMap(HashMap * map, char * key, void * value)
     Pair* newPair = malloc(sizeof(Pair));
     newPair->key = key;
     newPair->value = value;
-    map->buckets[pos] = newPair;
-    map->current = pos;
+    map->buckets[newPos] = newPair;
+    map->current = newPos;
     map->size++;
   }
 }
