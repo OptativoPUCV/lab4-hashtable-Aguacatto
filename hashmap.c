@@ -100,6 +100,7 @@ void eraseMap(HashMap * map,  char * key)
   if(par != NULL)
   {
     par->key = NULL;
+    map->size--;
   }
 }
 
