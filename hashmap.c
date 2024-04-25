@@ -104,6 +104,7 @@ Pair * searchMap(HashMap * map,  char * key)
   long pos = hash(key,map->capacity);
   if(is_equal(map->buckets[pos]->key, key) == 1)
   {
+    map->current = pos;
     return map->buckets[pos];
   }
   else
@@ -113,6 +114,7 @@ Pair * searchMap(HashMap * map,  char * key)
     {
       if(is_equal(map->buckets[newPos]->key, key) == 1)
       {
+        map->current = newPos;
         return map->buckets[newPos];
       }
       newPos = (newPos + 1) % map->capacity;
